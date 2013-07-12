@@ -40,8 +40,8 @@ define(:standard_dirs,
     hsh[:gid] = params[:group] if (hsh[:gid] == :group)
     [dir_paths].flatten.each do |dir_path|
       directory dir_path do
-        owner       hsh[:uid]
-        group       hsh[:gid]
+        owner       hsh[:uid].to_s
+        group       hsh[:gid].to_s
         mode        hsh[:mode] || '0755'
         action      :create
         recursive   true
